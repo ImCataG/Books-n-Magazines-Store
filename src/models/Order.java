@@ -9,7 +9,6 @@ public class Order {
     private Librarian librarian;
     private Dictionary<Book, Integer> books;
     private Dictionary<Magazine, Integer> magazines;
-    private Integer total;
     public Order() {
     }
 
@@ -18,17 +17,6 @@ public class Order {
         this.librarian = librarian;
         this.books = books;
         this.magazines = magazines;
-        int total = 0;
-        for (Enumeration<Book> e = books.keys(); e.hasMoreElements();) {
-            Book key = (Book) e.nextElement();
-            total += key.getPrice() * books.get(key);
-        }
-        for (Enumeration<Magazine> e = magazines.keys(); e.hasMoreElements();) {
-            Magazine key = (Magazine) e.nextElement();
-            total += key.getPrice() * magazines.get(key);
-        }
-
-        this.total = total;
     }
 
     public Integer getId() {
@@ -71,14 +59,6 @@ public class Order {
         this.magazines = magazines;
     }
 
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
-
     @Override
     public String toString() {
         return "models.Order{" +
@@ -87,7 +67,6 @@ public class Order {
                 ", librarian=" + librarian +
                 ", books=" + books +
                 ", magazines=" + magazines +
-                ", total=" + total +
                 '}';
     }
 

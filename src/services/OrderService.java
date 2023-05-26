@@ -50,4 +50,12 @@ public class OrderService {
             order.getBooks().put(book, quantity);
         }
     }
+
+    public void addMagazines(Magazine magazine, Integer quantity) {
+        if (order.getMagazines().get(magazine) != null) {
+            order.getMagazines().put(magazine, order.getMagazines().get(magazine) + quantity);
+        } else {
+            order.getMagazines().put(magazine, quantity);
+        }
+    }
 }

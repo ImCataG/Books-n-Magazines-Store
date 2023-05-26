@@ -9,11 +9,10 @@ public class Library {
     private String phoneNumber;
     private ArrayList<Librarian> librarians;
     private ArrayList<Client> clients;
-    private ArrayList<Order> orders;
     private Dictionary<Book, Integer> books;
     private Dictionary<Magazine, Integer> magazines;
 
-    public Library(String name, String address, String phoneNumber, ArrayList<Librarian> librarians, ArrayList<Client> clients, ArrayList<Order> orders, Dictionary<Book, Integer> books, Dictionary<Magazine, Integer> magazines){
+    public Library(String name, String address, String phoneNumber, ArrayList<Librarian> librarians, ArrayList<Client> clients, Dictionary<Book, Integer> books, Dictionary<Magazine, Integer> magazines){
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -21,7 +20,6 @@ public class Library {
         this.clients = clients;
         this.books = books;
         this.magazines = magazines;
-        this.orders = orders;
 
     }
     public Library() {
@@ -81,13 +79,6 @@ public class Library {
         this.clients = clients;
     }
 
-    public ArrayList<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(ArrayList<Order> orders) {
-        this.orders = orders;
-    }
 
     @Override
     public String toString() {
